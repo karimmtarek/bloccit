@@ -32,6 +32,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+#
+gem 'figaro', '1.0'
 # faker gem
 gem 'faker'
 # Devise gem
