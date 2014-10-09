@@ -17,6 +17,8 @@ group :development do
   gem 'better_errors'
   gem 'jazz_hands'
 end
+# Use Haml for views
+gem 'haml-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Using CSS framework - Bootstap
