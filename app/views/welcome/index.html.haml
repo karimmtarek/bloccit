@@ -1,12 +1,16 @@
 %br/
 .jumbotron
-  %h1 Bloccit
+  - if current_user
+    %h1 #{current_user.name.capitalize}! Welcome to Bloccit
+  - else
+    %h1 Welcome to Bloccit
   %p Bloccit is a resource for sharing links with your friends!
-  %p
-    = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
-    or
-    = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-    today!
+  - if !current_user
+    %p
+      = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+      or
+      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+      today!
 .row
   .col-md-4
     %h2 Solves world hunger
