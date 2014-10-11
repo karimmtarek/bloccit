@@ -75,8 +75,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = { :host => 'http://bloccit-by-kt.herokuapp.com' }
+  # suggested fix: http://stackoverflow.com/questions/4114835/heroku-devise-missing-host-to-link-to-please-provide-host-parameter-or-set-d?lq=1
+  # config.action_mailer.default_url_options = { :host => 'bloccit-by-kt.herokuapp.com' }
 end
-
+# suggested fix
 # Default Mailer Host
-# Rails.application.routes.default_url_options[:host] = 'heroku.com'
+Rails.application.routes.default_url_options[:host] = 'bloccit-by-kt.herokuapp.com'
