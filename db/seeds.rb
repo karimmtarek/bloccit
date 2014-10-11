@@ -32,10 +32,13 @@ posts = Post.all
 end
 
 # eliminate the burden of creating your own user every time you refresh the database
-User.first.update_attributes!(
-  email: 'karim@karimtarek.com',
-  password: 'helloworld'
-)
+# User.first.update_attributes(
+#   email: 'karim@karimtarek.com',
+#   password: 'helloworld'
+# )
+# user.skip_confirmation!
+# user.skip_reconfirmation!
+# user.save!
 
 puts "Seed finished"
 puts "#{User.count} users created"
