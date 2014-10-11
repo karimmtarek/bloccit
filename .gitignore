@@ -22,4 +22,4 @@
 /config/application.yml
 
 # Ignore secrets.yml
-/config/secrets.yml
+#/config/secrets.yml
