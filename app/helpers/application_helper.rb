@@ -7,6 +7,10 @@ module ApplicationHelper
     end
   end
 
+  def error_class?(errors)
+    'has-error' if errors.any?
+  end
+
   def my_name
     "Karim Tarek"
   end
