@@ -1,7 +1,7 @@
-%h1= markdown(@post.title)
+%h1= @post.markdown_title
 .row
   .col-md-8
-    %p= markdown(@post.body)
+    %p= @post.markdown_body
   .col-md-4
     - if policy(@post).edit?
       = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success'
