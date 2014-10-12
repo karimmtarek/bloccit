@@ -8,7 +8,7 @@ gem 'rails', '4.1.6'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'unicorn'
+  # gem 'unicorn'
 end
 
 group :development do
