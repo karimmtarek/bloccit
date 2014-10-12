@@ -5,10 +5,12 @@
       %ul
         - post.errors.full_messages.each do |msg|
           %li= msg
-  = form_group_tag(post.errors[:title]) do
+  -# = form_group_tag(post.errors[:title]) do
+  .form-group{ :class => (error_class?(post.errors[:title])) }
     = f.label :title
     = f.text_field :title, class: 'form-control', placeholder: "Enter post title"
-  = form_group_tag(post.errors[:body]) do
+  -# = form_group_tag(post.errors[:body]) do
+  .form-group{ :class => (error_class?(post.errors[:body])) }
     = f.label :body
     = f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body"
   .form-group
