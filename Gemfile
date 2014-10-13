@@ -32,16 +32,22 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# figaro
+# figaro: application settings / environment
 gem 'figaro', '1.0'
-# faker gem
+# faker: generate fack content
 gem 'faker'
-# Devise gem
+# Devise: login system
 gem 'devise'
-# pundit
+# pundit: users authorization
 gem 'pundit'
-# redcarpet
+# redcarpet: markdown renderer
 gem 'redcarpet'
+# carrierwave: image uploder
+gem 'carrierwave'
+# mini_magick: image manipulation
+gem 'mini_magick'
+# fog: cloud services library
+gem 'fog'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

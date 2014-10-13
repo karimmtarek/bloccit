@@ -1,6 +1,9 @@
 %h1= markdown(@post.title)
 .row
   .col-md-8
+    %small
+      = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
+      submitted #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}
     %p= markdown(@post.body)
   .col-md-4
     - if policy(@post).edit?
