@@ -7,7 +7,7 @@ module ApplicationHelper
     end
   end
 
-  def error_class?(errors)
+  def error_class(errors)
     'has-error' if errors.any?
   end
 
