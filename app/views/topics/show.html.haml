@@ -3,13 +3,14 @@
 - if policy(@topic).update?
   = link_to "Edit Topic", edit_topic_path, class: 'btn btn-success'
 
-.row
+.row.topic-posts
   .col-md-8
     %p{:class => "lead"}= @topic.description
     - @posts.each do |post|
       .media
         .media-body
           %h4{:class => "media-heading"}
+            = image_tag(post.image.thumb.url, class: 'thumbnail') if post.image?
             = link_to markdown(post.title), [@topic, post]
           %small
             = image_tag(current_user.avatar.tiny.url) if current_user.avatar?

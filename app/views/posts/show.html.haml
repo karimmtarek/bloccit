@@ -4,6 +4,7 @@
     %small
       = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
       submitted #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}
+    = image_tag(@post.image.url, class: 'thumbnail') if @post.image?
     %p= markdown(@post.body)
   .col-md-4
     - if policy(@post).edit?
