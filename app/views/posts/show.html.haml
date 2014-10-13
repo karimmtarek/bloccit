@@ -1,4 +1,5 @@
 %h1= markdown(@post.title)
+-# %h1= @post.markdown_title
 .row
   .col-md-8
     %small
@@ -6,6 +7,7 @@
       submitted #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}
     = image_tag(@post.image.url, class: 'thumbnail') if @post.image?
     %p= markdown(@post.body)
+    -# %p= @post.markdown_body
   .col-md-4
     - if policy(@post).edit?
       = link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success'
