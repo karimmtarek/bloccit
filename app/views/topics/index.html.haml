@@ -6,6 +6,7 @@
         .media-body
           %h4{:class => "media-heading"}= link_to markdown(topic.name), topic
           %small= markdown(topic.description)
+    = will_paginate @topics
   .col-md-4
     - if policy(Topic.new).create?
       = link_to "New Topic", new_topic_path, class: 'btn btn-success'
