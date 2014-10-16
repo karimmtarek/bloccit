@@ -26,7 +26,8 @@
             = image_tag(post.image.thumb.url, class: 'thumbnail') if post.image?
             = link_to markdown(post.title), [@topic, post]
           %small
-            = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
+            - if current_user
+              = image_tag(current_user.avatar.tiny.url) if current_user.avatar?
             submitted #{time_ago_in_words(post.created_at)} ago by #{post.user.name}
             %br/
             = post.comments.count
