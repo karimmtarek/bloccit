@@ -18,7 +18,7 @@
     -# %p= @post.markdown_body
     %div
       - if current_user
-        = render partial: 'comments/form', locals: { topic: @topic, post: @post }
+        = render partial: 'comments/form', locals: { post: @post }
     %h3
       Comments
       %span.badge= @comments.count
