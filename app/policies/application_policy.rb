@@ -36,14 +36,14 @@ class ApplicationPolicy
 
   def scope
     # Pundit.policy_scope!(user, record.class)
-    @record.class
+    record.class
   end
 
   class Scope
     attr_reader :user, :scope
 
     def initialize(user, scope)
-      @user = user
+      user = user
       @scope = scope
     end
 

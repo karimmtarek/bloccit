@@ -4,7 +4,11 @@
     - @topics.each do |topic|
       .media
         .media-body
-          %h4{:class => "media-heading"}= link_to markdown(topic.name), topic
+          %h4.media-heading
+            = link_to markdown(topic.name), topic
+            %span.label.label-primary
+              = topic.posts.count.to_s
+              post(s)
           %small= markdown(topic.description)
     = will_paginate @topics
   .col-md-4

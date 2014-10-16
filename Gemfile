@@ -16,6 +16,8 @@ group :development do
   gem 'thin'
   gem 'better_errors'
   gem 'jazz_hands'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 # Use Haml for views
 gem 'haml-rails'
