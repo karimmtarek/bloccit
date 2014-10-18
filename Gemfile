@@ -19,6 +19,11 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
 end
+
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 # Use Haml for views
 gem 'haml-rails'
 # Use SCSS for stylesheets
