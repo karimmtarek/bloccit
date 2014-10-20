@@ -1,5 +1,6 @@
 .row
   .col-md-12
+    = render partial: 'votes/voter', locals: { post: @post }
     %h1= markdown(@post.title)
     -# %h1= @post.markdown_title
     %ol.breadcrumb
@@ -7,6 +8,12 @@
       %li= link_to 'Topics', topics_path
       %li= link_to @post.topic.name, '/topics/' + params[:topic_id]
       %li.active= @post.title
+.row
+  .col-md-12
+    %h3= pluralize(@post.points, 'point')
+    %small
+      = pluralize(@post.up_votes, 'up vote')
+      = pluralize(@post.down_votes, 'down vote')
 .row
   .col-md-8
     %small

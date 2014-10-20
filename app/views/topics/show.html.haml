@@ -21,6 +21,7 @@
   .col-md-10
     - @posts.each do |post|
       .media
+        = render partial: 'votes/voter', locals: { post: post }
         .media-body
           %h4{:class => "media-heading"}
             = image_tag(post.image.thumb.url, class: 'thumbnail') if post.image?
