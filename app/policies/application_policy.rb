@@ -11,11 +11,11 @@ class ApplicationPolicy
   end
 
   def show?
-    scope.where(:id => @record.id).exists?
+    scope.where(:id => record.id).exists?
   end
 
   def create?
-    @user.present?
+    user.present?
   end
 
   def new?
@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    @user.present? && @user.admin?
+    user.present? && user.admin?
   end
 
   def edit?
@@ -43,7 +43,7 @@ class ApplicationPolicy
     attr_reader :user, :scope
 
     def initialize(user, scope)
-      user = user
+      @user = user
       @scope = scope
     end
 

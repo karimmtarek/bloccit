@@ -4,10 +4,10 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    @user.present? && (@record.user == @user || @user.admin?)
+    user.present? && (record.user == user || user.admin?)
   end
 
   def destroy?
-    @user.present? && can_moderate?(@user, @record)
+    user.present? && can_moderate?(user, record)
   end
 end
