@@ -39,6 +39,12 @@ class Post < ActiveRecord::Base
     user.votes.create(value: 1, post: self)
   end
 
+  def save_with_initial_vote
+    ActiveRecord::Base.transaction do
+      self.create_vote
+    end
+  end
+
   # not being used at the moment, instead markdown() method in application_helper is used to conver text to markdown
   def markdown_title
     render_as_markdown(title)
