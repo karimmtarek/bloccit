@@ -70,6 +70,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    did_you_mean (0.7.0)
+      binding_of_caller
     diff-lcs (1.2.5)
     diffy (3.0.6)
     erubis (2.7.0)
@@ -297,6 +299,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
+  did_you_mean
   faker
   figaro (= 1.0)
   fog

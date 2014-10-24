@@ -24,6 +24,8 @@ group :test do
   gem 'rspec-rails', '~> 3.1.0'
 end
 
+gem 'did_you_mean', group: [:development, :test]
+
 # Use Haml for views
 gem 'haml-rails'
 # Use SCSS for stylesheets

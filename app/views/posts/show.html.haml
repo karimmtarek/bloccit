@@ -2,7 +2,6 @@
   .col-md-12
     = render partial: 'votes/voter', locals: { post: @post }
     %h1= markdown(@post.title)
-    -# %h1= @post.markdown_title
     %ol.breadcrumb
       %li= link_to 'Home', root_path
       %li= link_to 'Topics', topics_path
@@ -14,6 +13,7 @@
     %small
       = pluralize(@post.up_votes, 'up vote')
       = pluralize(@post.down_votes, 'down vote')
+    = render partial: 'favorites/favorite', locals: {post: @post}
 .row
   .col-md-8
     %small
@@ -21,7 +21,6 @@
       submitted #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}
     = image_tag(@post.image.url, class: 'thumbnail') if @post.image?
     %p= markdown(@post.body)
-    -# %p= @post.markdown_body
     %div
       - if current_user
         - @comment ||= Comment.new

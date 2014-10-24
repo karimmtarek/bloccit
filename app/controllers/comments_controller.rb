@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     # @new_comment = Comment.new
 
     if @comment.save
-      flash[:notice] = "Comment was saved. xoxo"
+      flash[:notice] = "Comment was saved."
       redirect_to [@post.topic, @post]
       # redirect_to :back
     else
