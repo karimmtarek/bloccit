@@ -22,6 +22,7 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.1.0'
+  gem 'capybara'
 end
 
 gem 'did_you_mean', group: [:development, :test]
