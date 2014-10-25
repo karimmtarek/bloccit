@@ -15,11 +15,11 @@ module ApplicationHelper
   end
 
   def is_up_voted(post)
-    'up-voted' if (current_user.voted(post) && current_user.voted(post).up_vote?)
+    'voted' if (current_user.voted(post) && current_user.voted(post).up_vote?)
   end
 
   def is_down_voted(post)
-    'down-voted' if (current_user.voted(post) && current_user.voted(post).down_vote?)
+    'voted' if (current_user.voted(post) && current_user.voted(post).down_vote?)
   end
 
   def error_class(errors)
