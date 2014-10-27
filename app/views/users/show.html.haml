@@ -1,0 +1,23 @@
+.row
+  .col-md-12
+    .media
+      - if @user.avatar?
+        = image_tag @user.avatar.url, class: 'pull-left'
+      .media-body
+        %h2.media-heading= @user.name
+      %small
+        = pluralize(@user.posts.count, 'post')
+        ,
+        = pluralize(@user.comments.count, 'comment')
+.row
+  .col-md-12
+    %ul{ :class => "nav nav-tabs", :role => "tablist"}
+      %li.active
+        %a{:href => "#posts", :role => "tab", "data-toggle" => "tab"} Posts
+      %li
+        %a{:href => "#comments", :role => "tab", "data-toggle" => "tab"} Comments
+    .tab-content
+      .tab-pane.active{:id => "posts"}
+        = render partial: 'posts/post', collection: @posts
+      .tab-pane{:id => "comments"}
+        = render partial: 'comments/comment', collection: @comments
