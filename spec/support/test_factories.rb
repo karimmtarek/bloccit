@@ -16,4 +16,19 @@ module TestFactories
     user.save
     user
   end
+
+  def post_without_user(options={})
+    post_options = {title: 'This is a post title', body: "A post body has to be a bit long."}.merge(options)
+    post = Post.new(post_options)
+    post.save
+    post
+  end
+
+  def comment_without_email(options={})
+    comment_options = {body: "A Comment"}.merge(options)
+    comment = Comment.new(comment_options)
+    allow(comment).to receive(:send_favorite_emails)
+    comment.save
+    comment
+  end
 end

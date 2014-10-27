@@ -23,6 +23,7 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
+  gem 'jazz_hands'
 end
 
 gem 'did_you_mean', group: [:development, :test]
@@ -81,4 +82,5 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 
