@@ -14,6 +14,14 @@ module ApplicationHelper
     (redcarpet.render text).html_safe
   end
 
+  def is_up_voted(post)
+    'voted' if (current_user.voted(post) && current_user.voted(post).up_vote?)
+  end
+
+  def is_down_voted(post)
+    'voted' if (current_user.voted(post) && current_user.voted(post).down_vote?)
+  end
+
   def error_class(errors)
     'has-error' if errors.any?
   end
