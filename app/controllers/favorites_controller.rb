@@ -14,7 +14,6 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @post = Post.find(params[:post_id])
     favorite = current_user.favorites.find(params[:id])
 
