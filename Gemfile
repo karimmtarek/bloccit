@@ -15,7 +15,6 @@ group :development do
   gem 'sqlite3'
   gem 'thin'
   gem 'better_errors'
-  gem 'jazz_hands'
   gem 'binding_of_caller'
   gem 'quiet_assets'
 end
@@ -23,10 +22,10 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
-  gem 'jazz_hands'
 end
 
 gem 'did_you_mean', group: [:development, :test]
+gem 'jazz_hands', group: [:development, :test]
 
 # Use Haml for views
 gem 'haml-rails'
