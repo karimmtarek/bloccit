@@ -62,6 +62,7 @@ GEM
     coolline (0.5.0)
       unicode_utils (~> 1.4)
     daemons (1.1.9)
+    database_cleaner (1.0.1)
     debug_inspector (0.0.2)
     debugger (1.6.8)
       columnize (>= 0.3.1)
@@ -84,6 +85,11 @@ GEM
     eventmachine (1.0.3)
     excon (0.40.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
     figaro (1.0.0)
@@ -308,8 +314,10 @@ DEPENDENCIES
   capybara
   carrierwave
   coffee-rails (~> 4.0.0)
+  database_cleaner
   devise
   did_you_mean
+  factory_girl_rails (~> 4.0)
   faker
   figaro (= 1.0)
   fog

@@ -2,15 +2,13 @@ require 'rails_helper'
 
 describe "Visiting profiles" do
 
-  include TestFactories
   include Warden::Test::Helpers
   Warden.test_mode!
 
   before do
-    @user = authenticated_user
-    @topic = Topic.create(description: "A topic")
-    @post = post_without_user(user: @user, topic: @topic)
-    @comment = comment_without_email(post: @post, user: @user)
+    @user = create(:user)
+    @post = create(:post, user: @user)
+    @comment = create(:comment, post: @post, user: @user)
   end
 
   describe "not signed in" do
@@ -29,7 +27,7 @@ describe "Visiting profiles" do
   describe "signed in" do
 
     before do
-      login_as authenticated_user(role: 'admin'), :scope => :user
+      login_as @user
     end
 
     it "shows profiles" do
