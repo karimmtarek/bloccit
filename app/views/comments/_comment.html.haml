@@ -9,7 +9,7 @@
       ago
       - if policy(comment).destroy?
         |
-        = link_to "Delete", [comment.post, comment], method: :delete, data: {confirm: 'Are you sure you want to delete this comment?'}
+        = link_to "Delete", [comment.post, comment], method: :delete, data: {confirm: 'Are you sure you want to delete this comment?'}, remote: true
     %br
     = comment.body
     %hr

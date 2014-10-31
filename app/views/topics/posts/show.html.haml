@@ -25,9 +25,8 @@
       - if current_user
         - @comment ||= Comment.new
         = render partial: 'comments/form', locals: { post: @post, comment: @comment }
-    %h3
-      Comments
-      %span.badge= @post.comments.count
+    %h3.js-post-comments-count
+      = pluralize(@post.comments.count, 'comment')
     %hr
     = render partial: 'comments/comment', collection: @post.comments
 

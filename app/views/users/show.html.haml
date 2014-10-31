@@ -7,8 +7,8 @@
         %h2.media-heading= @user.name
       %small
         = pluralize(@user.posts.count, 'post')
-        ,
-        = pluralize(@user.comments.count, 'comment')
+        .js-user-comments-count
+          = pluralize(@user.comments.count, 'comment')
 .row
   .col-md-12
     %ul{ :class => "nav nav-tabs", :role => "tablist"}

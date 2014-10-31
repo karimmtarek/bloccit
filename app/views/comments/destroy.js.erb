@@ -1,0 +1,16 @@
+<% if @comment.destroyed? %>
+  var $userCmnt = $('.js-user-comments-count');
+  var $postCmnt = $('.js-post-comments-count');
+
+  $('#comment-' +<%= @comment.id %>).fadeOut();
+
+  if ($userCmnt.length > 0){
+    $('.js-user-comments-count').html("<%= @comment.user.comments.count %> comments");
+  }
+  if ($postCmnt.length > 0){
+    $('.js-post-comments-count').html("<%= @comment.post.comments.count %> comments");
+  }
+  //
+<% else %>
+  $('#comment-' +<%= @comment.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
+<% end %>
