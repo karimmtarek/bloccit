@@ -26,8 +26,10 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
 end
 
-gem 'did_you_mean', group: [:development, :test]
-gem 'jazz_hands', group: [:development, :test]
+group :development, :test do
+  gem 'did_you_mean'
+  gem 'jazz_hands'
+end
 
 # Use Haml for views
 gem 'haml-rails'
