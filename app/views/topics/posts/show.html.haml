@@ -21,14 +21,15 @@
       submitted #{time_ago_in_words(@post.created_at)} ago by #{@post.user.name}
     = image_tag(@post.image.url, class: 'thumbnail') if @post.image?
     %p= markdown(@post.body)
-    %div
+    .new-comment
       - if current_user
         - @comment ||= Comment.new
         = render partial: 'comments/form', locals: { post: @post, comment: @comment }
     %h3.js-post-comments-count
       = pluralize(@post.comments.count, 'comment')
     %hr
-    = render partial: 'comments/comment', collection: @post.comments
+    .js-comments
+      = render partial: 'comments/comment', collection: @post.comments
 
   .col-md-2
     - if policy(@post).edit?
