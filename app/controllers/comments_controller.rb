@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = "There was am error saving the comment. Please try again."
       # redirect_to [@post.topic, @post]
-      render 'posts/show'
+      # render 'posts/show'
     end
 
     respond_with(@comment) do |format|
