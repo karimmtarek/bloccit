@@ -5,7 +5,8 @@
     if ($postCmnt.length > 0){
       $('.js-post-comments-count').html("<%= pluralize(@post.comments.count, 'comment') %>");
     }
-  $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @new_comment }) %>");
+  $('.new-comment .errors').empty()
+  $('.new-comment textarea').val("");
 <% else %>
-  $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { post: @post, comment: @comment }) %>");
+  $('.new-comment .errors').html("<%= escape_javascript(render partial: 'comments/errors', locals: { comment: @comment }) %>");
 <% end %>
